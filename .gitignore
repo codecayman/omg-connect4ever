@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+metamask.onbrave.test.txt.enc
+
+# VS Code Config 
+./vscode
