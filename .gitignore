@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 metamask.onbrave.testnet.txt.enc
+metamask.edge.testnet.txt.enc
 
 # VS Code Config 
 /.vscode

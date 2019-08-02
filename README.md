@@ -1,8 +1,6 @@
 # OMG-Connect4Ever
 Connect 4 demo 🔴🔵🔴🔵
 
-http://connect4ever.surge.sh/
-
 ## How to play
 - Make sure you have installed the MetaMask extension with funds on Rinkeby
 - Deposit some ETH onto Plasma using the `Deposit` button (confirm the transaction through MetaMask)

@@ -11,10 +11,13 @@ import getMoveCoordinates from 'util/getMoveCoordinates';
 import config from 'util/config';
 
 import Board from 'components/board/Board';
+import Logs from 'components/logs/Logs';
 
 import * as styles from './Game.module.scss';
 
 const POLLING_INTERVAL = 10000;
+
+
 
 const INITIAL_BOARD_STATE = {
   col1: [0, 0, 0, 0, 0, 0],
@@ -148,15 +151,22 @@ const Game = ({ history, match: { params } }) => {
   useInterval(getBoardMoves, POLLING_INTERVAL);
 
   return (
-    <div className={styles.Game}>
-      <Board
-        onClick={turn ? dropCoin : () => alert('Its not your turn!')}
-        data={board}
-      />
-      <div className={styles.sidebar}>
-        {turn ? 'Its your turn!': 'Please wait for your opponent...'}
+    <div>
+      <div className={styles.Game}>
+        <Board
+          onClick={turn ? dropCoin : () => alert('Its not your turn!')}
+          data={board}
+        />
+        <div className={styles.sidebar}>
+          <div> Who's turn: {turn ? 'It is your turn.': 'Please wait, it is your opponents turn.'} </div>
+          <div> Game Address:  <a href={config.EXPLORER_URL + config.EXPLORER_PARAMETER_URL + gameAddress} target="_blank">{gameAddress}</a></div>
+        </div>
       </div>
+      <hr />
+      <h2>Event Logs</h2>
+      <Logs />
     </div>
+
   )
 }
 

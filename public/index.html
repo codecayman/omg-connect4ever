@@ -9,8 +9,26 @@
     <title>OmiseGo & Code(Cayman) - Connect Four Ever</title>
     <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md fixed-top">
+          <div class="col-4 pt-1">
+            <a class="navbar-brand" href="http://www.codecayman.com"><img src='/cc-logo.png' alt="Code(Cayman)" /></a>
+          </div>
+          <div class="col-8 d-flex justify-content-end align-items-center">
+              <div class="align-self-center"></div><div> <a class="navbar-brand" href="https://www.omisego.co"><img src='/omg-logo.png' alt="Omise Go" /></a></div>
+          </div>
+        </nav>
+    </header>
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <div id="root" class="mt-5"></div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+          <div class="container pt-4 text-muted text-center">Thank you to Omise for providing the OmiseGo network that powers this Ethereum based game. </div>
+      </footer>
   </body>
 </html>

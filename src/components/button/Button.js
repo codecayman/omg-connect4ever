@@ -6,13 +6,15 @@ const Button = ({
   children,
   onClick,
   style,
-  disabled
+  disabled,
+  cssClass
 }) => {
   return (
     <div
       onClick={onClick}
       className={[
-        styles.Button,
+        styles.ButtonNoColor,
+        cssClass ? cssClass : styles.Button,
         disabled ? styles.disabled : ''
       ].join(' ')}
       style={style}

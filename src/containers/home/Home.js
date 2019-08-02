@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import network from 'util/network';
 import { createAddress, getAccounts, getBalances, deposit } from 'util/networkActions';
+import config from 'util/config';
 
 import Button from 'components/button/Button';
 import * as styles from './Home.module.scss';
@@ -54,7 +55,7 @@ const Home = ({ history }) => {
             <div key={index}>
               <div className={styles.balance}>
                 <div>Address: </div>
-                <div>{`${i.address.substring(0, 20)}...`}</div>
+                <div><a href={config.EXPLORER_URL + config.EXPLORER_PARAMETER_URL + i.address} target="_blank">{i.address}</a></div>
               </div>
 
               <div className={styles.balance}>
@@ -87,6 +88,7 @@ const Home = ({ history }) => {
           )}
           <Button
             style={{ marginTop: '20px' }}
+            cssClass = {hasSufficientBalance ? "btn btn-success" : null }
             onClick={createGameAddress}
             disabled={!hasSufficientBalance}
           >
